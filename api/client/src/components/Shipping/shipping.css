@@ -1,0 +1,31 @@
+.shipping {
+    
+    display: flex;
+    flex-direction: column;
+    margin: 10%;
+}
+
+.shipping-info {
+    margin: 20px;
+}
+.shipping-icon {
+    margin: 20px;
+   text-align: center;
+   color: rgb(238, 94, 94);
+}
+.shipping-title {
+    text-align: center;
+}
+.shipping-words {
+    text-align: center;
+    margin: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .shipping {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+
+}
