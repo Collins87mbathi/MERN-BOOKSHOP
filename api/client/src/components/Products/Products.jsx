@@ -3,7 +3,7 @@ import './Products.css';
 import Menu from './Menu';
 import Categories from './Categories';
 import axios from 'axios';
-import { axiosInstance } from '../../config';
+import { baseUrl } from '../../config';
 
 
 const Products = () => {
@@ -11,7 +11,7 @@ const Products = () => {
 
   useEffect(()=> {
    const fetchProducts = async ()=> {
-     const res = await axiosInstance.get("/products");
+     const res = await axios.get(baseUrl + "/products");
      setMenuItems(res.data);
    };
    fetchProducts();

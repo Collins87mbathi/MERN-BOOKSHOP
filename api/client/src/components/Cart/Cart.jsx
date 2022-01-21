@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react'
+import axios from 'axios';
 import CartItem from './CartItem'
 import { useGlobalContext } from '../context/context';
-import { axiosInstance } from '../../config';
+import { baseUrl } from '../../config';
 import './Cart.css'
 import StripeCheckout from "react-stripe-checkout";
 const KEY = process.env.REACT_APP_STRIPE;
@@ -24,7 +25,7 @@ const Cart = () => {
   useEffect(() => {
     const makeRequest = async () => {
     
-        const res = await axiosInstance.post("/checkout/payment", {
+        const res = await axios.post(baseUrl + "/checkout/payment", {
           tokenId: stripeToken.id,
           amount: 500,
         });

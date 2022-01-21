@@ -1,7 +1,3 @@
-import axios from "axios";
 
-export  const axiosInstance = axios.create({
-    
-    baseUrl : "https://perezbookshop.herokuapp.com/api/v1",
+export  const baseUrl = "https://perezbookshop.herokuapp.com/api/v1";
 
-});

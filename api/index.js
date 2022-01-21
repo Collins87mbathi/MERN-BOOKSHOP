@@ -8,6 +8,8 @@ const ProductRoute = require('./router/products');
 const AuthRoute = require('./router/user');
 const UserRoute = require('./router/useDetail');
 const cors = require('cors');
+const helmet = require('helmet');
+const morgan = require('morgan');
 const PORT = process.env.PORT || 5000;
 
 
@@ -16,8 +18,11 @@ CONNECTDB(process.env.MONGO_URL);
 
 
 //middlewares
-app.use(cors);
+app.use(cors({origin : '*'}));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
+app.use(helmet());
+app.use(morgan('combined'));
 app.use('/api/v1/products',ProductRoute);
 app.use('/api/v1/auth',AuthRoute);
 app.use('/api/v1/users',UserRoute);
