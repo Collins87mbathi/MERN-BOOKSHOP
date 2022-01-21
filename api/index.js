@@ -20,7 +20,7 @@ CONNECTDB(process.env.MONGO_URL);
 //middlewares
 app.use(cors({origin : '*'}));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true})); 
 app.use(helmet());
 app.use(morgan('combined'));
 app.use('/api/v1/products',ProductRoute);
