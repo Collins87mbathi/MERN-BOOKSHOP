@@ -1,3 +1,3 @@
 
-export  const baseUrl = "https://perezbookshop.herokuapp.com/api/v1";
+export  const baseUrl = "https://collinsbookshop.herokuapp.com/api/v1";
 
